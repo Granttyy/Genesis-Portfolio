@@ -10,8 +10,8 @@ const EXPERIENCES = [
     period: 'Feb 2026 — Mar 2026',
     type: 'work',
     description:
-      'Engineered network optimizations and resolved critical hardware/software bottlenecks. Transitioned physical layouts into high-fidelity Figma designs and streamlined IT asset tracking.',
-    skills: ['Network Architecture', 'Figma', 'Hardware Diagnostics', 'Network Configuration'],
+      'Resolved hardware and network issues, improved system reliability, and organized IT assets for better tracking.',
+    skills: ['Networking', 'Hardware Diagnostics', 'IT Support', 'Figma'],
   },
   {
     title: 'BS in Computer Science',
@@ -19,8 +19,8 @@ const EXPERIENCES = [
     period: '2022 — 2026',
     type: 'edu',
     description:
-      'Specializing in Cloud Infrastructure and Backend Systems. Developed a robust foundation in algorithmic complexity, database normalization, and distributed systems.',
-    skills: ['Software Engineering', 'Cloud Computing', 'Distributed Systems', 'Data Structures'],
+      'Focused on backend development and cloud systems with a strong foundation in software engineering and databases.',
+    skills: ['Software Engineering', 'Cloud Computing', 'Data Structures', 'Databases'],
   },
   {
     title: 'Inventory Management Specialist',
@@ -28,9 +28,9 @@ const EXPERIENCES = [
     period: 'Sep 2025 — Jan 2026',
     type: 'work',
     description:
-      'Developed automated web scraping scripts to aggregate product intelligence. Performed deep-dive data analysis to optimize inventory turnover and order accuracy.',
-    skills: ['Data Analytics', 'Process Automation', 'Inventory Control'],
-  },
+      'Automated data collection using web scraping and analyzed inventory trends to improve accuracy and efficiency.',
+    skills: ['Web Scraping', 'Data Analysis', 'Automation'],
+  }
 ];
 
 const containerVariants = {

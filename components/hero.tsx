@@ -60,8 +60,8 @@ export function Hero() {
           variants={item}
           className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl leading-relaxed"
         >
-          I’m just starting out, but I’m focused on building scalable infrastructure and reliable backend systems, 
-          with about a year of practical exposure to cloud platforms, containerization, and modern deployment practices.
+          I build and deploy scalable backend systems using FastAPI, Node.js, and Docker, with hands-on experience in 
+          cloud infrastructure and CI/CD pipelines.
         </motion.p>
 
         <motion.div

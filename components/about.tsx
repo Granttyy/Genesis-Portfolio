@@ -14,12 +14,12 @@ export function About() {
       items: ['AWS', 'Docker', 'CI/CD', 'Bash Scripting', 'Linux']
     },
     {
-      category: 'Databases & AI',
-      items: ['MongoDB', 'MySQL', 'NLP', 'Web Scraping', 'Data Analysis']
+      category: 'Networking',
+      items: ['IP Networking', 'Router Configuration', 'IT Support']
     },
     {
-      category: 'Networking',
-      items: ['IP Networking', 'Router Config', 'IT Infrastructure', 'Network Security']
+      category: 'Other',
+      items: ['MongoDB', 'MySQL', 'NLP', 'Web Scraping', 'Data Analysis']
     },
   ];
 
@@ -72,27 +72,16 @@ export function About() {
             className="space-y-8"
           >
             <motion.p variants={item} className="text-white/70 text-lg md:text-xl leading-relaxed">
-              I am a <span className="font-bold text-white underline decoration-blue-400/40 decoration-2 underline-offset-4">Computer Science professional</span> from
-              <span className="text-blue-400 font-bold"> Pampanga State University</span>, specialized in the
-              intersection of <span className="font-bold text-white">Backend Engineering</span> and
-              <span className="font-bold text-white"> Cloud Operations</span>.
-            </motion.p>
+              I am a <span className="font-bold text-white underline decoration-blue-400/40 decoration-2 underline-offset-4">Computer Science student</span> from
+              <span className="text-blue-400 font-bold"> Pampanga State University</span> with hands-on experience building backend systems and deploying applications.
 
-            <motion.p variants={item} className="text-white/70 text-lg leading-relaxed">
-              Currently, I am actively seeking an <span className="text-blue-400 font-bold">Entry-Level position</span> in
-              <span className="font-bold text-white"> Cloud, Backend, or DevOps</span>.
-              I bring a unique hybrid perspective—combining hands-on experience in
-              <span className="font-bold text-white"> IT Networking</span> and
-              <span className="font-bold text-white"> Infrastructure Support</span> with a modern
-              tech stack including <span className="font-bold text-white">FastAPI</span>,
-              <span className="font-bold text-white">Node.js</span>, and <span className="font-bold text-white">AWS</span>.
+              I work with FastAPI, Node.js, Docker, and AWS to develop APIs, automate deployments, and create reliable, scalable solutions focused on <span className="font-bold text-white">Backend Development</span> and <span className="font-bold text-white">DevOps</span>.
             </motion.p>
 
             <motion.div variants={item} className="border-l-4 border-blue-400 pl-6 py-2">
               <p className="text-white/90 text-lg italic font-light tracking-wide">
-                &quot;My goal is to simplify the complex—automating deployments,
-                optimizing database performance, and ensuring that every line of code
-                scales seamlessly in a cloud-native environment.&quot;
+                &quot;My goal is to develop backend systems, automate deployments, 
+                and gain deeper experience in building and maintaining cloud-based applications.&quot;
               </p>
             </motion.div>
 
