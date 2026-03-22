@@ -37,7 +37,7 @@ export function Projects() {
         'Custom DevOps orchestrator that automates Docker deployments from GitHub URLs using webhooks for real-time CI/CD pipelines.',
       technologies: ['Node.js', 'Docker', 'Webhooks', 'Smee.io', 'Shell Scripting'],
       image: '/projects/Deployment Manager.jpg',
-      github: 'https://github.com/your-repo/deployment-manager', // Replace with actual repo
+      github: 'https://github.com/Granttyy/deployment-manager', 
       live: '#', // Hidden: Show only repo
       featured: true,
     },
