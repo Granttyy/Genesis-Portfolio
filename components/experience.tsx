@@ -29,39 +29,54 @@ const EXPERIENCES = [
     type: 'work',
     description:
       'Automated data collection using web scraping and analyzed inventory trends to improve accuracy and efficiency.',
-    skills: ['Web Scraping', 'Data Analysis', 'Automation'],
-  }
+    skills: ['Web Scraping', 'Data Analysis', 'Ticket Troubleshooting'],
+  },
+  {
+    title: 'Customer Service Representative',
+    company: 'VXI Global Solutions',
+    period: 'Jun 2022 — Sep 2022',
+    type: 'work',
+    description:
+      'Provided technical troubleshooting and managed customer inquiries while maintaining detailed service logs and system integrity.',
+    skills: ['Customer Service', 'Troubleshooting', 'Communication'],
+  },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.2, delayChildren: 0.2 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 bg-black text-white selection:bg-accent/30">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
+    <section 
+      id="experience" 
+      className="min-h-screen py-24 px-6 md:px-12 bg-background relative overflow-hidden selection:bg-accent/30 text-foreground"
+    >
+      {/* Background Glow Matching the About Section */}
+      <div className="absolute top-1/3 -right-20 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto w-full relative z-10">
+        {/* Header matched to About Section Typography */}
         <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter italic">
-            Experience<span className="text-accent">.</span>
-          </h2>
-          <p className="text-white/40 mt-4 max-w-md font-mono text-sm uppercase tracking-widest">
-            A chronological look at my professional and academic evolution.
+          <span className="text-accent text-sm font-bold uppercase tracking-[0.3em]">Career Path</span>
+          <h2 className="text-5xl md:text-7xl font-extrabold text-foreground mt-4">Experience</h2>
+          <p className="text-muted-foreground mt-6 max-w-xl text-lg leading-relaxed">
+            A chronological look at my academic evolution and one year of hands-on professional experience.
           </p>
         </motion.div>
 
@@ -71,43 +86,51 @@ export function Experience() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative border-l border-white/10 ml-4 md:ml-0 md:pl-0"
+          className="relative border-l-2 border-border ml-4 md:ml-6"
         >
           {EXPERIENCES.map((exp, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="relative pl-8 pb-16 last:pb-0"
+              className="relative pl-8 md:pl-12 pb-16 last:pb-0 group"
             >
-              {/* Timeline Dot/Icon */}
-              <div className="absolute -left-[13px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-black border border-white/20 text-accent group-hover:border-accent transition-colors">
-                {exp.type === 'work' ? <Briefcase size={12} /> : <GraduationCap size={12} />}
+              {/* Timeline Dot/Icon with Hover Glow */}
+              <div className="absolute -left-[17px] top-4 flex h-8 w-8 items-center justify-center rounded-full bg-background border-2 border-border text-muted-foreground group-hover:border-accent group-hover:text-accent transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(0,217,255,0.3)] group-hover:scale-110">
+                {exp.type === 'work' ? <Briefcase size={14} /> : <GraduationCap size={14} />}
               </div>
 
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-4">
-                <div>
-                  <h3 className="text-2xl font-semibold tracking-tight">{exp.title}</h3>
-                  <p className="text-accent/90 font-medium text-lg">{exp.company}</p>
+              {/* Card Container Matching About Skills Grid */}
+              <div className="p-8 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/10 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50">
+                
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+                      {exp.title}
+                    </h3>
+                    <p className="text-accent font-medium text-lg">{exp.company}</p>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs font-bold whitespace-nowrap bg-background/50 px-3 py-1.5 rounded-full border border-border group-hover:border-accent/30 transition-colors">
+                    <Calendar size={12} className="text-accent" />
+                    {exp.period}
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-white/40 font-mono text-xs whitespace-nowrap bg-white/5 px-3 py-1 rounded-full border border-white/5">
-                  <Calendar size={12} />
-                  {exp.period}
+
+                <p className="text-muted-foreground leading-relaxed text-base mb-8">
+                  {exp.description}
+                </p>
+
+                {/* Skills Tags Matching About Component */}
+                <div className="flex flex-wrap gap-2">
+                  {exp.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-muted-foreground text-[11px] font-bold px-3 py-1.5 bg-background rounded-full border border-border group-hover:border-accent/30 group-hover:text-foreground transition-all"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-              </div>
-
-              <p className="text-white/60 leading-relaxed max-w-3xl text-base mb-6">
-                {exp.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {exp.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded bg-white/5 border border-white/10 text-white/80 hover:border-accent/50 hover:text-accent transition-all cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                
               </div>
             </motion.div>
           ))}
