@@ -5,22 +5,22 @@ import { Briefcase, GraduationCap, Calendar } from 'lucide-react';
 
 const EXPERIENCES = [
   {
+    title: 'Skills Training & Mentorship Program',
+    company: 'Nimbyx',
+    period: 'Jun 2026 — Present',
+    type: 'work',
+    description:
+      'Administer Microsoft 365, Entra ID, and Azure VMs while building Shell/Bash scripts for automation, managing remote infrastructure, and handling credentials with Passbolt.',
+    skills: ['Microsoft 365', 'Entra ID', 'Azure', 'Bash Scripting', 'Passbolt', 'IT Infrastructure'],
+  },
+  {
     title: 'IT Intern',
     company: 'PBO Global',
     period: 'Feb 2026 — Mar 2026',
     type: 'work',
     description:
-      'Resolved hardware and network issues, improved system reliability, and organized IT assets for better tracking.',
-    skills: ['Networking', 'Hardware Diagnostics', 'IT Support', 'Figma'],
-  },
-  {
-    title: 'BS in Computer Science',
-    company: 'Pampanga State University',
-    period: '2022 — 2026',
-    type: 'edu',
-    description:
-      'Focused on backend development and cloud systems with a strong foundation in software engineering and databases.',
-    skills: ['Software Engineering', 'Cloud Computing', 'Data Structures', 'Databases'],
+      'Coordinated with ISPs to build network infrastructure from the ground up, diagnosed hardware/endpoint issues, and overhauled asset tracking systems.',
+    skills: ['Networking', 'ISP Coordination', 'Hardware Diagnostics', 'Asset Management', 'IT Support'],
   },
   {
     title: 'Inventory Management Specialist',
@@ -28,8 +28,17 @@ const EXPERIENCES = [
     period: 'Sep 2025 — Jan 2026',
     type: 'work',
     description:
-      'Automated data collection using web scraping and analyzed inventory trends to improve accuracy and efficiency.',
-    skills: ['Web Scraping', 'Data Analysis', 'Ticket Troubleshooting'],
+      'Automated data gathering via web scraping, resolved inventory discrepancies, and managed operational workflows using 1Password and Intercom.',
+    skills: ['Web Scraping', 'Data Analysis', '1Password', 'Intercom', 'Process Automation'],
+  },
+  {
+    title: 'BS in Computer Science',
+    company: 'Pampanga State University',
+    period: '2022 — 2026',
+    type: 'edu',
+    description:
+      'Graduated Cum Laude with a GWA of 1.424, building a strong foundation in software engineering and databases while developing a focused interest in backend development and cloud systems.',
+    skills: ['Software Engineering', 'Cloud Computing', 'Data Structures', 'Databases'],
   },
   {
     title: 'Customer Service Representative',
@@ -37,8 +46,8 @@ const EXPERIENCES = [
     period: 'Jun 2022 — Sep 2022',
     type: 'work',
     description:
-      'Provided technical troubleshooting and managed customer inquiries while maintaining detailed service logs and system integrity.',
-    skills: ['Customer Service', 'Troubleshooting', 'Communication'],
+      'Provided technical support for the Modivcare account, managed complex escalations, and maintained confidential service documentation.',
+    skills: ['Technical Support', 'Customer Service', 'Process Management', 'Documentation'],
   },
 ];
 
@@ -61,11 +70,11 @@ export function Experience() {
       id="experience" 
       className="min-h-screen py-24 px-6 md:px-12 bg-background relative overflow-hidden selection:bg-accent/30 text-foreground"
     >
-      {/* Background Glow Matching the About Section */}
+      {/* Background Glow */}
       <div className="absolute top-1/3 -right-20 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
-        {/* Header matched to About Section Typography */}
+        {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +85,7 @@ export function Experience() {
           <span className="text-accent text-sm font-bold uppercase tracking-[0.3em]">Career Path</span>
           <h2 className="text-5xl md:text-7xl font-extrabold text-foreground mt-4">Experience</h2>
           <p className="text-muted-foreground mt-6 max-w-xl text-lg leading-relaxed">
-            A chronological look at my academic evolution and one year of hands-on professional experience.
+            A chronological look at my academic foundation and one year of hands-on professional experience in IT infrastructure, system administration, and automation.
           </p>
         </motion.div>
 
@@ -94,12 +103,12 @@ export function Experience() {
               variants={itemVariants}
               className="relative pl-8 md:pl-12 pb-16 last:pb-0 group"
             >
-              {/* Timeline Dot/Icon with Hover Glow */}
+              {/* Timeline Icon */}
               <div className="absolute -left-[17px] top-4 flex h-8 w-8 items-center justify-center rounded-full bg-background border-2 border-border text-muted-foreground group-hover:border-accent group-hover:text-accent transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(0,217,255,0.3)] group-hover:scale-110">
                 {exp.type === 'work' ? <Briefcase size={14} /> : <GraduationCap size={14} />}
               </div>
 
-              {/* Card Container Matching About Skills Grid */}
+              {/* Card Container */}
               <div className="p-8 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/10 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50">
                 
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
@@ -119,7 +128,7 @@ export function Experience() {
                   {exp.description}
                 </p>
 
-                {/* Skills Tags Matching About Component */}
+                {/* Skills Tags */}
                 <div className="flex flex-wrap gap-2">
                   {exp.skills.map((skill) => (
                     <span
